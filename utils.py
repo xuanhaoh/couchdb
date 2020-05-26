@@ -14,7 +14,7 @@ hostname = socket.gethostname()
 address = get_ip_address('eth0')
 
 with open('/home/vdb/couchdb/etc/vm.args', mode='w', encoding='utf-8') as f1:
-    with open(os.getcwd() + '/vm.args', mode='r', encoding='utf-8') as f2:
+    with open('/home/ec2-user/couchdb-master/vm.args', mode='r', encoding='utf-8') as f2:
         for line in f2.readlines():
             if line.startswith('-name'):
                 line = line.rstrip() + address + '\n'
